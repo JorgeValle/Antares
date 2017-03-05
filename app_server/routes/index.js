@@ -7,6 +7,6 @@ var ctrlPages = require('../controllers/pages');
 router.get('/', ctrlMain.index);
 
 /* GET page by title */
-router.get('/page', ctrlPages.pageByTitle);
+router.get('/:pageUrl', ctrlPages.pageByTitle);
 
 module.exports = router;

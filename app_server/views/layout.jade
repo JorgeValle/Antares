@@ -1,8 +1,18 @@
 doctype html
 html
 	head
-	meta(name='viewport', content='width=device-width, initial-scale=1.0')
-	title= title
-	link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css')
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title= title
+		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
 body
-	block content
+	main.container
+		div.row
+			div.col-md-4
+				p Blah blah blah
+			div.col-md-8
+				h1 Jorge Valle
+				h2 Web developer
+
+		div.row
+			block content
