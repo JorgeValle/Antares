@@ -1,5 +1,9 @@
 var mongoose = require('mongoose');
 var dbURI = 'mongodb://127.0.0.1/Antares';
+
+if (process.env.NODE_ENV === 'production') {
+	dbURI = process.env.MONGOLAB_URI;
+}
 mongoose.connect(dbURI);
 
 var gracefulShutdown = function (msg, callback) {
