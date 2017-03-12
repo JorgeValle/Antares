@@ -27,6 +27,25 @@ module.exports.readOnePage = function(req, res) {
 
 module.exports.createOnePage = function(req, res) {
 
+	// create a new model document
+	var page = new pages();
+
+	// populate the relevant properties from the body of the request
+	page.url = req.body.url;
+	page.title = req.body.title;
+	page.body = req.body.body;
+	page.published = req.body.published;
+	page.publishedDate = new Date();
+
+	// save the final document to the database
+	page.save(function(err, page) {
+		sendJsonResponse(res, 201, page);
+	})
+
+};
+
+module.exports.updateOnePage = function(req, res) {
+
 	var page = new pages();
 
 	page.url = req.body.url;
@@ -37,5 +56,17 @@ module.exports.createOnePage = function(req, res) {
 	page.save(function(err, page) {
 		sendJsonResponse(res, 201, page);
 	})
+
+};
+
+module.exports.deleteOnePage = function(req, res) {
+
+	// get the url from the router
+	var wantedUrl = req.params.url;
+
+	// find the document, and delete it
+	pages.findOne({'_id': req.body.id }).remove( function(err, page) {
+		sendJsonResponse(res, 200, 'Content has been deleted.');
+	});
 
 };
