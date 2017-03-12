@@ -12,4 +12,10 @@ router.get('/pages/:url', bodyParser.json(), ctrlIndex.readOnePage);
 // create page by page url
 router.post('/pages/create', ctrlIndex.createOnePage);
 
+// update page by page url
+router.put('/pages/update', ctrlIndex.updateOnePage);
+
+// delete page by page url
+router.delete('/pages/delete', ctrlIndex.deleteOnePage);
+
 module.exports = router;
