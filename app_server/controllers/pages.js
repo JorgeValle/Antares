@@ -3,6 +3,10 @@ var apiOptions = {
 	server: "http://localhost:3000"
 };
 
+if (process.env.NODE_ENV === 'production') {
+	apiOptions.server = 'http://murmuring-earth-39282.herokuapp.com/';
+}
+
 var requestOptions = {
 	url: apiOptions.server,
 	method: 'GET',
