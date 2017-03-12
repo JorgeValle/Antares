@@ -3,16 +3,34 @@ html
 	head
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		title= title
+		title= documentTitle
+		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Domine|Open+Sans')
 		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
-body
-	main.container
-		div.row
-			div.col-md-4
-				p Blah blah blah
-			div.col-md-8
-				h1 Jorge Valle
-				h2 Web developer
+		link(rel='stylesheet', href='/stylesheets/main.css')
+body.container
+	header.row
+		div.col-sm-1.col-lg-2
+		div.col-sm-10.col-lg-8
+			a(href='/')
+				img.rounded-circle.mx-auto.d-block.p-3(src='/images/jorge.jpg')
+			h1.text-center Jorge Valle
+			h2.text-center Man. Web developer. Atheist.
 
-		div.row
+			nav.row
+				div.col-6.text-center
+					a(href='/').text-center Home
+				div.col-6.text-center
+					a(href='/blog').text-center Blog
+
+			hr
+
+		div.col-sm-1.col-lg-2
+
+
+	main.row
+		div.col-sm-1.col-lg-2
+		div.col-sm-10.col-lg-8
 			block content
+		div.col-sm-1.col-lg-2
+
+include footer
