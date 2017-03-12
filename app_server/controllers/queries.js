@@ -4,7 +4,7 @@ var apiOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-	apiOptions.server = 'http://murmuring-earth-39282.herokuapp.com/';
+	apiOptions.server = 'http://murmuring-earth-39282.herokuapp.com';
 }
 
 var requestOptions = {
