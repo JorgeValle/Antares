@@ -12,13 +12,15 @@ var routesAPI = require('./app_api/routes/index');
 
 var app = express();
 
-app.all('/*', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next();     
-  }
-});
+function wwwRedirect(req, res, next) {
+    if (req.headers.host.slice(0, 4) === 'www.') {
+        var newHost = req.headers.host.slice(4);
+        return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+    }
+    next();
+};
+
+app.use(wwwRedirect);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
