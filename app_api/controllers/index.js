@@ -1,7 +1,12 @@
 var mongoose = require('mongoose');
-
 // bringing in the pages collection
 var pages = mongoose.model('Page');
+
+// setting the API password for local and production environments
+var apiPassword = 'whatpassword';
+if (process.env.NODE_ENV === 'production') {
+	apiPassword = process.env.API_PASSWORD;
+}
 
 var sendJsonResponse = function(res, status, content) {
 	res.status(status);
@@ -37,14 +42,24 @@ module.exports.createOnePage = function(req, res) {
 	page.published = req.body.published;
 	page.publishedDate = new Date();
 
-	// save the final document to the database
-	page.save(function(err, page) {
-		sendJsonResponse(res, 201, page);
-	})
+	if (req.body.password === apiPassword) {
+
+		// save the final document to the database
+		page.save(function(err, page) {
+			sendJsonResponse(res, 201, page);
+		});
+
+	} else {
+
+		sendJsonResponse(res, 403, "Nice try, buddy.");
+	}
 
 };
 
 module.exports.updateOnePage = function(req, res) {
+
+	// get the url from the router
+	var wantedUrl = req.body.url;
 
 	var page = new pages();
 
@@ -53,20 +68,35 @@ module.exports.updateOnePage = function(req, res) {
 	page.body = req.body.body;
 	page.published = req.body.published;
 
-	page.save(function(err, page) {
-		sendJsonResponse(res, 201, page);
-	})
+	if (req.body.password === apiPassword) {
+
+		pages.findOneAndUpdate({'url': wantedUrl}, page, {upsert:true}, function(err, page) {
+			sendJsonResponse(res, 201, page);
+		});
+
+	} else {
+
+		sendJsonResponse(res, 403, "Nice try, buddy.");
+	}
 
 };
 
 module.exports.deleteOnePage = function(req, res) {
 
 	// get the url from the router
-	var wantedUrl = req.params.url;
+	var wantedUrl = req.body.url;
 
-	// find the document, and delete it
-	pages.findOne({'_id': req.body.id }).remove( function(err, page) {
-		sendJsonResponse(res, 200, 'Content has been deleted.');
-	});
+	// if it maches local or prod environment password, go ahead
+	if (req.body.password === apiPassword) {
+
+		// find the document, and delete it
+		pages.findOneAndRemove({'url': wantedUrl }, function(err, page) {
+			sendJsonResponse(res, 200, 'Content has been deleted.');
+		});
+
+	} else {
+
+		sendJsonResponse(res, 403, "Nice try, buddy.");
+	}
 
 };
