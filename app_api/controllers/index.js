@@ -58,19 +58,20 @@ module.exports.createOnePage = function(req, res) {
 
 module.exports.updateOnePage = function(req, res) {
 
-	// get the url from the router
-	var wantedUrl = req.body.url;
+	// get url to update from router middleware and set to var
+	var query = {'url': req.body.url};
 
-	var page = new pages();
+	// construct the inserted data from request body
+	var updateData = {
+		title: req.body.title,
+  		body: req.body.body
+	};
 
-	page.url = req.body.url;
-	page.title = req.body.title;
-	page.body = req.body.body;
-	page.published = req.body.published;
-
+	// check for presence of password
 	if (req.body.password === apiPassword) {
 
-		pages.findOneAndUpdate({'url': wantedUrl}, page, {upsert:true}, function(err, page) {
+		// {new:true} returns updated doc
+		pages.findOneAndUpdate(query, updateData, {new: true}, function(err, page) {
 			sendJsonResponse(res, 201, page);
 		});
 
