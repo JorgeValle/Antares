@@ -1,26 +1,33 @@
 body {
-	font-family: 'Open Sans', sans-serif;
-}
-h1, h2, h3, h4, i.date {
 	font-family: 'Domine', serif;
+}
+
+header h1,
+header h2 {
+	font-family: 'Domine', serif;
+}
+
+h1, h2, h3, h4, i.date {
+	font-family: 'Roboto', serif;
 }
 header h1 {
 	font-size: 1.8em;
 }
 header h2 {
 	font-size: 1.3em;
+	color: #757575;
 }
-header h2,
 i.date,
 footer small {
-	color: #78909c;
+	font-family: 'Roboto', serif;
+	color: #757575;
 }
 span.email {
 	unicode-bidi: bidi-override;
 	direction: rtl;
 }
 a {
-	color: #0277bd ;
+	color: #0277bd;
 	text-decoration: underline;
 }
 nav ul {
@@ -29,6 +36,23 @@ nav ul {
 nav a {
 	font-size: 1.1em;
 	text-decoration: none;
+}
+hr {
+	border-top: 1px solid #e0e0e0;
+}
+hr.fancy {
+	border-top: 1px solid #e0e0e0;
+	text-align: center;
+}
+hr.fancy:after {
+	content: 'Θ';
+	display: inline-block;
+	position: relative;
+	top: -14px;
+	padding: 0 10px;
+	background: #fff;
+	color: #bdbdbd;
+	font-size: 18px;
 }
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+clike+javascript+csharp&plugins=line-numbers */
