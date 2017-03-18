@@ -14,7 +14,7 @@ var requestOptions = {
 };
 
 var renderQueryContent = function(req, res, responseBody) {
-	res.render('themes/views/blog', {
+	res.render('blog', {
 		documentTitle: " Blog | JorgeValle.com" ,
 		// we parse JSON response to get properties ready for consumption in pug templates
 		apiResponse: JSON.parse(responseBody)

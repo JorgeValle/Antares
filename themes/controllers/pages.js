@@ -25,7 +25,7 @@ var prettyDate = function(dateString) {
 }
 
 var renderPageByTitle = function(req, res, responseBody) {
-	res.render('themes/views/page', {
+	res.render('page', {
 
 		// we parse JSON response to get properties ready for consumption in pug templates
 		documentTitle: JSON.parse(responseBody).title + " | JorgeValle.com" ,

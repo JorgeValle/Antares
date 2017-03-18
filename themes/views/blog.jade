@@ -1,0 +1,8 @@
+extends layout
+
+block content
+
+	each content in apiResponse
+		a(href='/blog/' + content.url)
+			h3 #{content.title}
+		p !{content.body.substr(0, 300)}

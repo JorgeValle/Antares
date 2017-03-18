@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	div.mt-2.mb-3
+		h1=title
+		i.date=date
+
+	// we use the !{} notation to render the html
+	div !{body}
