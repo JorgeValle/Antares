@@ -6,10 +6,8 @@ block content
 urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
 	url
 		loc='http://jorgevalle.com'
-urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
 	url
 		loc='http://jorgevalle.com/blog'
 each content in apiResponse
-	urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
-		url
-			loc='http://jorgevalle.com/blog/' + content.url
+	url
+		loc='http://jorgevalle.com/blog/' + content.url
