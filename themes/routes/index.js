@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-let ctrlMain = require('../controllers/main');
-let ctrlPages = require('../controllers/pages');
-let ctrlQueries = require('../controllers/queries');
+var ctrlMain = require('../controllers/main');
+var ctrlPages = require('../controllers/pages');
+var ctrlQueries = require('../controllers/queries');
 
 /* GET theme home page */
 router.get('/', ctrlMain.homepage);
