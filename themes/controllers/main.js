@@ -1,6 +1,6 @@
 /* GET home page */
-module.exports.index = function(req, res) {
-	res.render('index', { 
+module.exports.homepage = function(req, res) {
+	res.render('homepage', { 
 		documentTitle: 'Home | JorgeValle.com'
 
 	});
