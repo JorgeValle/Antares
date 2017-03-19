@@ -15,12 +15,20 @@ var requestOptions = {
 
 var renderQueryContent = function(req, res, responseBody) {
 	res.render('blog', {
-		documentTitle: " Blog | JorgeValle.com" ,
+		documentTitle: 'Blog | JorgeValle.com' ,
 		// we parse JSON response to get properties ready for consumption in pug templates
 		apiResponse: JSON.parse(responseBody)
 	});
 
 	console.log("responseBody from renderQueryContent: " + JSON.parse(responseBody));
+};
+
+var renderSitemap = function(req, res, responseBody) {
+	res.render('sitemap', {
+		documentTitle: 'Sitemap | JorgeValle.com' ,
+		// we parse JSON response to get properties ready for consumption in pug templates
+		apiResponse: JSON.parse(responseBody)
+	});
 };
 
 request(requestOptions, function(err, response, body) {
@@ -37,8 +45,6 @@ request(requestOptions, function(err, response, body) {
 /* GET page by title */
 module.exports.queryAll = function(req, res) {
 
-	console.log('queryAll ran');
-
 	var requestOptions, path;
 	path = '/api/pages';
 
@@ -54,6 +60,29 @@ module.exports.queryAll = function(req, res) {
 				console.log("Request error" + err);
 			} else {
 				renderQueryContent(req, res, body);
+			}
+
+	});
+};
+
+/* GET page by title */
+module.exports.sitemap = function(req, res) {
+
+	var requestOptions, path;
+	path = '/api/pages';
+
+	var fullUrl = apiOptions.server + path;
+
+	requestOptions = {
+		url: fullUrl,
+		method: 'GET'
+	};
+	request(requestOptions, function(err, response, body) {
+
+			if (err) {
+				console.log("Request error" + err);
+			} else {
+				renderSitemap(req, res, body);
 			}
 
 	});

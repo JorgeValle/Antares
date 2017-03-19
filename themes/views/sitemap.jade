@@ -1,0 +1,13 @@
+block content
+
+xml(version='1.0', encoding='utf-8')
+	urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+		url
+			loc='http://jorgevalle.com'
+	urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+		url
+			loc='http://jorgevalle.com/blog'
+	each content in apiResponse
+		urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+			url
+				loc='http://jorgevalle.com/blog/' + content.url
