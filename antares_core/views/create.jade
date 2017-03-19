@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	h1 Create page
+
+	form(action='/api/pages/create', method='post')
+		div.form-group
+			label(for='pageTitle') Page Title
+			input#pageTitle.form-control(type='text', aria-describedby='pageTitleHelp', name='title')
+			small#pageTitleHelp.form-text.text-muted The title of your page.
+		div.form-group
+			label(for='pageSlug') Page Slug
+			input#pageSlug.form-control(type='text', aria-describedby='pageSlugHelp', name='url')
+			small#pageSlugHelp.form-text.text-muted The URL slug for your page. If left blank, we'll generate an automatic one.
+		div.form-group
+			label(for='pageContent') Page Content
+			textarea#pageContent.form-control(rows='3', aria-describedby='pageContentHelp', name='body')
+			small#pageContentHelp.form-text.text-muted The content of your page. HTML markup only.
+		div.form-group
+			label(for='password') Password
+			input#password.form-control(type='text', aria-describedby='passwordHelp', name='password')
+			small#password.form-text.text-muted The temporary password for the API.
+		div
+			button.btn.btn-primary(type='submit') Publish

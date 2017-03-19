@@ -1,6 +1,7 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -8,24 +9,13 @@ require('./app_api/models/db');
 
 
 // setting up the routes for the core admin section, core api, and user themes 
-var routesAdmin = require('./antares_core/routes/index');
+var routesAntares = require('./antares_core/routes/index');
 var routesAPI = require('./app_api/routes/index');
 var routesTheme = require('./themes/routes/index');
 
-
 var app = express();
 
-function wwwRedirect(req, res, next) {
-    if (req.headers.host.slice(0, 4) === 'www.') {
-        var newHost = req.headers.host.slice(4);
-        return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
-    }
-    next();
-};
-
-app.use(wwwRedirect);
-
-// view engine setup, both for admin section and themes folder
+// view directory setup, both for admin section and themes folder
 app.set('views', [__dirname + '/antares_core/views', __dirname + '/themes/views']);
 app.set('view engine', 'jade');
 
@@ -37,9 +27,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'assets')));
 
-app.use('/admin', routesAdmin);
 app.use('/api', routesAPI);
 app.use('/', routesTheme);
+app.use('/admin', routesAntares);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

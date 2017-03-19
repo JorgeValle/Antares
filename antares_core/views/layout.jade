@@ -1,11 +1,32 @@
 doctype html
 html(lang='en')
 	head
+		title= documentTitle
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		title= documentTitle
+		meta(name='robots', content='noindex, nofollow')
 		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
-		link(rel='stylesheet', href='/stylesheets/main.css')
+		link(rel='stylesheet', href='/stylesheets/antares.css')
 
 body
-	h1 Welcome to Antares
+	nav.navbar.bg-inverse.navbar-inverse
+		div.collapse.navbar-collapse
+			ul.navbar-nav.mr-auto
+				li.nav-item
+					a.nav-link(href='/admin') Content
+		a.navbar-brand(href='/admin') Antares
+
+	div.container-fluid
+		div.row
+			nav.col-sm-2
+				ul.nav.nav-pills.flex-column
+					li.nav-item
+						a.nav-link(href='/admin') All pages
+						a.nav-link(href='/admin/create') Create page
+						a.nav-link(href='/admin/update') Update page
+
+			main.col-sm-10
+				block content
+
+				hr
+				small Copyright 2017 Antares

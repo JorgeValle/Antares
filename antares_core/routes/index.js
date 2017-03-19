@@ -3,6 +3,10 @@ var router = express.Router();
 var ctrlMain = require('../controllers/main');
 
 /* GET admin page */
-router.get('/admin', ctrlMain.index);
+router.get('/', ctrlMain.index);
+
+router.get('/create', ctrlMain.create);
+
+router.get('/update', ctrlMain.update);
 
 module.exports = router;
