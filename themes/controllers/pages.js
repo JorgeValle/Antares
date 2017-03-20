@@ -29,6 +29,7 @@ var renderPageByTitle = function(req, res, responseBody) {
 
 		// we parse JSON response to get properties ready for consumption in pug templates
 		documentTitle: JSON.parse(responseBody).title + " | JorgeValle.com" ,
+		canonicalUrl: 'http://jorgevalle.com' + req.url,
 		title: JSON.parse(responseBody).title,
 		date: prettyDate(JSON.parse(responseBody).publishedDate),
 		body: JSON.parse(responseBody).body
