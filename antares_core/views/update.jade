@@ -3,7 +3,8 @@ extends layout
 block content
 	h1 Update page
 
-	form(action='/api/pages/update', method='put')
+	//- this gets converted to a put by method-override package
+	form(action='/api/pages/update?_method=put', method='post')
 		div.form-group
 			label(for='pageTitle') Page Title
 			input#pageTitle.form-control(type='text', aria-describedby='pageTitleHelp', name='title')

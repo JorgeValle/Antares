@@ -5,6 +5,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+var methodOverride = require('method-override')
+
 require('./app_api/models/db');      
 
 
@@ -26,6 +29,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'assets')));
+// use method override for allowing put and delete requests on forms
+app.use(methodOverride('_method'))
 
 app.use('/api', routesAPI);
 app.use('/', routesTheme);
