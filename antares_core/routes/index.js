@@ -5,6 +5,8 @@ var ctrlMain = require('../controllers/main');
 /* GET admin page */
 router.get('/', ctrlMain.index);
 
+router.get('/query', ctrlMain.query);
+
 router.get('/create', ctrlMain.create);
 
 router.get('/update', ctrlMain.update);

@@ -7,8 +7,8 @@ if (process.env.NODE_ENV === 'production') {
 	apiOptions.server = 'http://murmuring-earth-39282.herokuapp.com';
 }
 
-/* GET home page */
-module.exports.index = function(req, res) {
+/* GET page queries */
+module.exports.query = function(req, res) {
 
 	var requestOptions, path;
 	path = '/api/pages';
@@ -33,13 +33,19 @@ module.exports.index = function(req, res) {
 };
 
 var renderQueryContent = function(req, res, responseBody) {
-	res.render('index', {
-		documentTitle: 'All Pages | Antares CMS' ,
+	res.render('query', {
+		documentTitle: 'Query Content | Antares CMS' ,
 		// we parse JSON response to get properties ready for consumption in pug templates
 		apiResponse: JSON.parse(responseBody)
 	});
 };
 
+/* GET welcome page */
+module.exports.index = function(req, res) {
+	res.render('index', { 
+		documentTitle: 'Welcome | Antares CMS'
+	});
+};
 
 module.exports.create = function(req, res) {
 	res.render('create', { 
