@@ -15,6 +15,6 @@ router.get('/blog/:pageUrl', ctrlPages.pageByUrl);
 router.get('/blog', ctrlQueries.queryAll);
 
 /* GET sitemap */
-router.get('/sitemap', ctrlQueries.sitemap);
+router.get('/sitemap.xml', ctrlQueries.sitemap);
 
 module.exports = router;
