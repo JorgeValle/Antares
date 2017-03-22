@@ -48,7 +48,7 @@ request(requestOptions, function(err, response, body) {
 module.exports.queryAll = function(req, res) {
 
 	var requestOptions, path;
-	path = '/api/pages';
+	path = '/api/pages?sortby=descending';
 
 	var fullUrl = apiOptions.server + path;
 

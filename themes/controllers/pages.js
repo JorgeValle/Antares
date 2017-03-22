@@ -34,8 +34,6 @@ var renderPageByTitle = function(req, res, responseBody) {
 		date: prettyDate(JSON.parse(responseBody).publishedDate),
 		body: JSON.parse(responseBody).body
 	});
-
-	console.log("responseBody: " + JSON.parse(responseBody));
 };
 
 
