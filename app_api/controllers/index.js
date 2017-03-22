@@ -70,7 +70,8 @@ module.exports.updateOnePage = function(req, res) {
 	// construct the inserted data from request body
 	var updateData = {
 		title: req.body.title,
-  		body: req.body.body
+  		body: req.body.body,
+  		lastModifiedDate: new Date()
 	};
 
 	// check for presence of password

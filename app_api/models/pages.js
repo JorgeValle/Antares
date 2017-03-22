@@ -6,7 +6,8 @@ var pageSchema = new mongoose.Schema({
 	body: String,
 	publishedDate: { type: Date },
 	published: Boolean,
-	isHomepage: Boolean
+	isHomepage: Boolean,
+	lastModifiedDate: { type: Date }
 });
 
 // compile schema to bson, telling mongo to use 'pages' collection

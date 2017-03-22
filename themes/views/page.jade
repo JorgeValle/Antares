@@ -1,9 +1,11 @@
 extends layout
 
 block content
+
 	div.mt-2.mb-3
 		h1=title
-		i.date=date
+		i.date #{date}
+			//-small #{lastModifiedDate == 'undefined NaN, NaN' ? '': ', modified on ' + lastModifiedDate}
 
-	// we use the !{} notation to render the html
-	div !{body}
+		// we use the !{} notation to render the html
+		div !{body}
