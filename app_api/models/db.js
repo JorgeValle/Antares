@@ -41,5 +41,6 @@ process.once("SIGTERM", function() {
 	});
 });
 
-// requiring the pages.js model
+// requiring the all the needed models
 require('./pages');
+require('./users');
