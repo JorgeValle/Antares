@@ -10,6 +10,10 @@ block content
 			input#pageTitle.form-control(type='text', aria-describedby='pageTitleHelp', name='title')
 			small#pageTitleHelp.form-text.text-muted The title of your page.
 		div.form-group
+			label(for='alternativeTitle') Alternative Title
+			input#alternativeTitle.form-control(type='text', aria-describedby='alternativeTitleHelp', name='alternativeTitle')
+			small#alternativeTitleHelp.form-text.text-muted The alternative title of your page.
+		div.form-group
 			label(for='pageSlug') Page Slug
 			input#pageSlug.form-control(type='text', aria-describedby='pageSlugHelp', name='url')
 			small#pageSlugHelp.form-text.text-muted The URL slug for your page. If left blank, we'll generate an automatic one.

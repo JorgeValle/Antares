@@ -44,6 +44,7 @@ module.exports.createOnePage = function(req, res) {
 	// populate the relevant properties from the body of the request
 	page.url = req.body.url;
 	page.title = req.body.title;
+	page.alternativeTitle = req.body.alternativeTitle;
 	page.body = req.body.body;
 	page.published = req.body.published;
 	page.publishedDate = new Date();
@@ -70,6 +71,7 @@ module.exports.updateOnePage = function(req, res) {
 	// construct the inserted data from request body
 	var updateData = {
 		title: req.body.title,
+		alternativeTitle: req.body.alternativeTitle,
   		body: req.body.body,
   		lastModifiedDate: new Date()
 	};

@@ -31,6 +31,7 @@ var renderPageByTitle = function(req, res, responseBody) {
 		documentTitle: JSON.parse(responseBody).title + " | JorgeValle.com" ,
 		canonicalUrl: 'http://jorgevalle.com' + req.url,
 		title: JSON.parse(responseBody).title,
+		alternativeTitle: JSON.parse(responseBody).alternativeTitle,
 		date: prettyDate(JSON.parse(responseBody).publishedDate),
 		lastModifiedDate: prettyDate(JSON.parse(responseBody).lastModifiedDate),
 		body: JSON.parse(responseBody).body

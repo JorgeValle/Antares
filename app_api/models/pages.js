@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var pageSchema = new mongoose.Schema({
 	url: { type: String, unique: true },
 	title: String,
+	alternativeTitle: String,
 	body: String,
 	publishedDate: { type: Date },
 	published: Boolean,

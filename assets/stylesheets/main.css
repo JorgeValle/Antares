@@ -17,6 +17,22 @@ header h2 {
 	font-size: 1.3em;
 	color: #757575;
 }
+article h2,
+article h3 {
+	font-size: 1.3rem;
+	border-bottom: 1px solid #e0e0e0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+article h2 + p,
+article h3 + p { 
+	padding-top: 10px;
+}
+
+article div {
+	margin-top: 20px;
+}
+
 i.date,
 footer small {
 	font-family: 'Roboto', serif;
