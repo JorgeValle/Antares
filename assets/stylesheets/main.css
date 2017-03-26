@@ -1,12 +1,47 @@
 body {
 	font-family: 'Domine', serif;
+	border-top: 5px solid #292b2c;
+}
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+nav a {
+	color: #114753;
+	text-decoration: underline;
+	font-size: 1.1em;
+	text-decoration: none;
+}
+nav.main-menu {
+	text-transform: uppercase;
+	font-family: 'Roboto', serif;
+}
+nav div.col-lg-6 {
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+}
+nav ul {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	list-style: none;
+	padding-left: 0;
+}
+nav.main-menu a.selected {
+	border-bottom: 3px solid #956362;
+	padding-bottom: 11px;
 }
 
+main a {
+	color: #956362;
+	border-bottom: 1px dotted #594a42;
+}
+main nav a {
+	border-bottom: none;
+}
 header h1,
 header h2 {
 	font-family: 'Domine', serif;
 }
-
 h1, h2, h3, h4, i.date {
 	font-family: 'Roboto', serif;
 }
@@ -25,7 +60,9 @@ article h3 {
 	padding-bottom: 10px;
 }
 article h2 + p,
-article h3 + p { 
+article h3 + p,
+article h2 + ul,
+article h3 + ul { 
 	padding-top: 10px;
 }
 
@@ -41,18 +78,6 @@ footer small {
 span.email {
 	unicode-bidi: bidi-override;
 	direction: rtl;
-}
-a {
-	color: #0277bd;
-	text-decoration: underline;
-}
-nav ul {
-	list-style: none;
-	padding-left: 0;
-}
-nav a {
-	font-size: 1.1em;
-	text-decoration: none;
 }
 hr {
 	border-top: 1px solid #e0e0e0;
@@ -91,6 +116,8 @@ pre[class*="language-"] {
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
+	display: inline-block;
+	max-width: 100%;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -130,7 +157,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #f5f2f0;
+	background: white;
 }
 
 /* Inline code */
@@ -162,7 +189,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #905;
+	color: #956362;
 }
 
 .token.selector,
@@ -171,7 +198,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #690;
+	color: #6D7D7C;
 }
 
 .token.operator,
@@ -186,7 +213,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #07a;
+	color: #292b2c;
 }
 
 .token.function {
