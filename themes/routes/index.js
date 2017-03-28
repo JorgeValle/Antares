@@ -14,6 +14,9 @@ router.get('/blog/:pageUrl', ctrlPages.pageByUrl);
 /* GET queries */
 router.get('/blog', ctrlQueries.queryAll);
 
+/* GET thanks page */
+router.get('/thanks', ctrlPages.thanks);
+
 /* GET sitemap */
 router.get('/sitemap.xml', ctrlQueries.sitemap);
 

@@ -5,6 +5,4 @@ module.exports.homepage = function(req, res) {
 		canonicalUrl: 'http://jorgevalle.com' + req.url,
 		activeUrl: req.url
 	});
-
-	console.log("activeUrl: " + activeUrl)
 };

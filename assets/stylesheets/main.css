@@ -6,6 +6,15 @@ a:hover,
 a:focus {
 	text-decoration: none;
 }
+button {
+	color: #fff;
+    background-color: #D28A7E;
+    border-color: #D28A7E;
+}
+button:hover {
+	background-color: #114753;
+	cursor: pointer;
+}
 nav a {
 	color: #114753;
 	text-decoration: underline;
@@ -30,7 +39,12 @@ nav.main-menu a.selected {
 	border-bottom: 3px solid #956362;
 	padding-bottom: 11px;
 }
-
+.newsletter-signup {
+	font-family: 'Roboto', serif;
+	color: #292b2c;
+	border-top: 3px solid #114753;
+	margin-top: 30px;
+}
 main a {
 	color: #956362;
 	border-bottom: 1px dotted #594a42;

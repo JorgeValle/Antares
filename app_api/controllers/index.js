@@ -17,9 +17,6 @@ module.exports.readAllPages = function(req, res) {
 
 	var sortBy = req.query.sortby;
 
-	console.log('The query string for readAllPages is: ' + req.query.test);
-
-
 	pages.find({}).sort({'publishedDate': sortBy}).exec(function(err, pages) {
 		sendJsonResponse(res, 200, pages);
 	})
