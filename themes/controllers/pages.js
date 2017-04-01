@@ -79,7 +79,7 @@ module.exports.thanks = function(req, res) {
 	res.render('thanks', {
 
 		// we parse JSON response to get properties ready for consumption in pug templates
-		documentTitle: " Thanks | JorgeValle.com" ,
+		documentTitle: "Thanks | JorgeValle.com" ,
 		canonicalUrl: 'http://jorgevalle.com' + req.url,
 		activeUrl: req.url
 	});
