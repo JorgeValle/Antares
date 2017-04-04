@@ -40,16 +40,6 @@ var renderPageByTitle = function(req, res, responseBody) {
 };
 
 
-request(requestOptions, function(err, response, body) {
-	if(err) {
-		console.log(err);
-	} else if (response.statusCode === 200) {
-		console.log(body);
-	} else {
-		console.log(response.statusCode);
-	}
-});
-
 /* GET page by url */
 module.exports.pageByUrl = function(req, res) {
 
@@ -66,9 +56,16 @@ module.exports.pageByUrl = function(req, res) {
 
 			if (err) {
 				console.log("Request error" + err);
+			} else if ( response.statusCode == '404' ) {
+				res.status(404).render('404', { 
+						documentTitle: "Not found | JorgeValle.com" ,
+						canonicalUrl: 'http://jorgevalle.com' + req.url,
+						activeUrl: req.url
+					});
 			} else {
 				renderPageByTitle(req, res, body);
-			}
+				console.log("res.statusCode:" + res.statusCode);
+			}	
 
 	});
 };

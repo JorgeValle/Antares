@@ -28,9 +28,16 @@ module.exports.readOnePage = function(req, res) {
 	var wantedUrl = req.params.url;
 
 	// go fetch wanted content via mongoose
-	pages.findOne({'url': wantedUrl }).exec(function(err, page) {
-		sendJsonResponse(res, 200, page);
-	})
+	pages.findOne({'url': wantedUrl }, function(err, page) {
+
+		// return 200 only if page is found, otherwise return 404
+		if(page) {
+			sendJsonResponse(res, 200, page);
+		} else {
+			sendJsonResponse(res, 404);
+		}
+	});
+
 };
 
 module.exports.createOnePage = function(req, res) {
