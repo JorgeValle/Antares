@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 // bringing in the pages collection
 var pages = mongoose.model('Page');
+var fs = require('fs');
+
 
 // setting the API password for local and production environments
 var apiPassword = 'whatpassword';
