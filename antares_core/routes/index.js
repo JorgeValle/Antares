@@ -11,4 +11,6 @@ router.get('/create', ctrlMain.create);
 
 router.get('/update', ctrlMain.update);
 
+router.get('/site', ctrlMain.site);
+
 module.exports = router;

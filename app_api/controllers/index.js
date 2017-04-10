@@ -114,3 +114,29 @@ module.exports.deleteOnePage = function(req, res) {
 	}
 
 };
+
+/**
+ * All methods for writing to files
+ */
+
+module.exports.writeSettings = function(req, res) {
+
+	var siteTitle = req.body.siteTitle;
+	var email = req.body.email;
+
+	var settingsObject = {
+			siteTitle: siteTitle,
+			email: email,
+			password: password
+	};
+
+	var json = JSON.stringify(settingsObject);
+
+	fs.writeFile('antares_core/config/site.json', json, function (err) {
+	  if (err) {
+	  	return console.log(err);
+	  } else {
+	  	sendJsonResponse(res, 200, 'File written');
+	}
+	});
+};

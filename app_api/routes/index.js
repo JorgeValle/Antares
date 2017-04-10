@@ -17,5 +17,7 @@ router.put('/pages/update', ctrlIndex.updateOnePage);
 
 // delete page by page url
 router.delete('/pages/delete', ctrlIndex.deleteOnePage);
+// write site settings to file
+router.post('/settings', ctrlIndex.writeSettings);
 
 module.exports = router;

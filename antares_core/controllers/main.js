@@ -7,6 +7,15 @@ if (process.env.NODE_ENV === 'production') {
 	apiOptions.server = 'http://murmuring-earth-39282.herokuapp.com';
 }
 
+/* GET welcome page */
+module.exports.site = function(req, res) {
+	res.render('site', { 
+		documentTitle: 'Site Settings | Antares CMS'
+	});
+};
+
+
+
 /* GET page queries */
 module.exports.query = function(req, res) {
 
