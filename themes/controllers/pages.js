@@ -35,7 +35,11 @@ var renderPageByTitle = function(req, res, responseBody) {
 		alternativeTitle: JSON.parse(responseBody).alternativeTitle,
 		date: prettyDate(JSON.parse(responseBody).publishedDate),
 		lastModifiedDate: prettyDate(JSON.parse(responseBody).lastModifiedDate),
-		body: JSON.parse(responseBody).body
+		bodyOne: JSON.parse(responseBody).bodyOne,
+		bodyTwo: JSON.parse(responseBody).bodyTwo,
+		bodyThree: JSON.parse(responseBody).bodyThree,
+		bodyFour: JSON.parse(responseBody).bodyFour,
+		bodyFive: JSON.parse(responseBody).bodyFive
 	});
 };
 

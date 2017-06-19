@@ -51,7 +51,11 @@ module.exports.createOnePage = function(req, res) {
 	page.url = req.body.url;
 	page.title = req.body.title;
 	page.alternativeTitle = req.body.alternativeTitle;
-	page.body = req.body.body;
+	page.bodyOne = req.body.bodyOne;
+	page.bodyTwo = req.body.bodyTwo;
+	page.bodyThree = req.body.bodyThree;
+	page.bodyFour = req.body.bodyFour;
+	page.bodyFive = req.body.bodyFive; 
 	page.published = req.body.published;
 	page.publishedDate = new Date();
 
@@ -78,7 +82,11 @@ module.exports.updateOnePage = function(req, res) {
 	var updateData = {
 		title: req.body.title,
 		alternativeTitle: req.body.alternativeTitle,
-  		body: req.body.body,
+  		bodyOne: req.body.bodyOne,
+  		bodyTwo: req.body.bodyTwo,
+  		bodyThree: req.body.bodyThree,
+  		bodyFour: req.body.bodyFour,
+  		bodyFive: req.body.bodyFive,
   		lastModifiedDate: new Date()
 	};
 

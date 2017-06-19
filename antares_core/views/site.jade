@@ -6,7 +6,7 @@ block content
 	p Nullam ac pretium elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque at facilisis libero. Vivamus luctus neque eu augue congue, nec cursus nulla elementum. Pellentesque fermentum sem nec leo interdum efficitur. Quisque non elit at sem viverra tempus ut accumsan erat. Aenean placerat, risus vel venenatis lacinia, nibh lorem faucibus tellus, a vulputate purus magna et ligula.
 
 	//- this gets converted to a put by method-override package
-	form(action='/api/write', method='post')
+	form(action='/api/settings', method='post')
 		div.form-group
 			label(for='site-title') Site Title
 			input#site-title.form-control(type='text', aria-describedby='site-title-help', name='siteTitle')

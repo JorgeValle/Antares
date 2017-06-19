@@ -9,6 +9,18 @@ block content
 			//-small #{lastModifiedDate == 'undefined NaN, NaN' ? '': ', modified on ' + lastModifiedDate}
 
 		// we use the !{} notation to render the html
-		div !{body}
+		div !{bodyOne}
+
+		div
+			h3 Commercial stuff here
+
+		div !{bodyTwo}
+
+			h3 Patreon stuff here
+
+		div !{bodyThree}
+		div !{bodyFour}
+		div !{bodyFive}
+
 
 	include newsletter-signup
