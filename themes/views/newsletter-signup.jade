@@ -1,11 +1,9 @@
-section.pt-3.pb-3.newsletter-signup
-	p.text-center I write about Javascript, web development and tech at large.
+p.lead I blog about a lot of different facets of web development, but mostly about JavaScript, Node.js, Angular, AngularJS and the .NET framework.
 
-	div.row
-		div.xs-10.mx-auto.d-block
-			form.form-inline(action='http://jorgevalle.createsend.com/t/d/s/xggt/', method='post')
-				div.form-group
-					label.sr-only(for='emailAddress')
-					input#emailAddress.form-control(type='email', name='cm-xggt-xggt', placeholder='Email address')
-					span.input-group-btn
-						button.btn(type='submit') Subscribe
+p If this sounds interesting to you, please subscribe.
+
+form.form-inline(action='http://jorgevalle.createsend.com/t/d/s/xggt/', method='POST')
+	div.input-group.mb-5
+		input.form-control(id='email-address', type='email', name='cm-xggt-xggt', placeholder='email address', required='required')
+		span.input-group-btn
+			button.btn.btn-warning(type='submit') Subscribe

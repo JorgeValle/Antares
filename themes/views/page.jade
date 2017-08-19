@@ -2,25 +2,23 @@ extends layout
 
 block content
 
-	article.mt-2.mb-3
-		h1=title
-			//-small.text-muted #{alternativeTitle == 'undefined Nan, Nan' ? '': ' or ' + alternativeTitle}
-		i.date #{date}
-			//-small #{lastModifiedDate == 'undefined NaN, NaN' ? '': ', modified on ' + lastModifiedDate}
+	main.container-fluid.mt-4
+		div.row
+			div.col-xs-12.col-sm-12.col-md-8
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href='/blog') Blog
+					li.breadcrumb-item.active=title
+			div.col-xs-12.col-sm-12.col-md-4
+		div.row
+			div.col
+				h1=title
+		div.row
+			div.col-xs-12.col-sm-12.col-md-8
 
-		// we use the !{} notation to render the html
-		div !{bodyOne}
+				//-small.text-muted #{alternativeTitle == 'undefined Nan, Nan' ? '': ' or ' + alternativeTitle}
+				p.lead.text-muted #{date}
 
-		div
-			h3 Commercial stuff here
-
-		div !{bodyTwo}
-
-			h3 Patreon stuff here
-
-		div !{bodyThree}
-		div !{bodyFour}
-		div !{bodyFive}
-
-
-	include newsletter-signup
+				div !{bodyOne}
+			div.col-xs-12.col-sm-12.col-md-4
+				include newsletter-signup

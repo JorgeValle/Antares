@@ -15,7 +15,7 @@ var requestOptions = {
 
 var renderQueryContent = function(req, res, responseBody) {
 	res.render('blog', {
-		documentTitle: 'Blog | JorgeValle.com',
+		documentTitle: 'Blog',
 		canonicalUrl: 'http://jorgevalle.com' + req.url,
 		activeUrl: req.url,
 		// we parse JSON response to get properties ready for consumption in pug templates
@@ -25,7 +25,7 @@ var renderQueryContent = function(req, res, responseBody) {
 
 var renderSitemap = function(req, res, responseBody) {
 	res.render('sitemap', {
-		documentTitle: 'Sitemap | JorgeValle.com',
+		documentTitle: 'Sitemap',
 		canonicalUrl: 'http://jorgevalle.com' + req.url,
 		activeUrl: req.url,
 		// we parse JSON response to get properties ready for consumption in pug templates

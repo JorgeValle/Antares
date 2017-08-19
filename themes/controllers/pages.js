@@ -62,7 +62,7 @@ module.exports.pageByUrl = function(req, res) {
 				console.log("Request error" + err);
 			} else if ( response.statusCode == '404' ) {
 				res.status(404).render('404', { 
-						documentTitle: "Not found | JorgeValle.com" ,
+						documentTitle: "Not Found" ,
 						canonicalUrl: 'http://jorgevalle.com' + req.url,
 						activeUrl: req.url
 					});
@@ -80,7 +80,7 @@ module.exports.thanks = function(req, res) {
 	res.render('thanks', {
 
 		// we parse JSON response to get properties ready for consumption in pug templates
-		documentTitle: "Thanks | JorgeValle.com" ,
+		documentTitle: "Thanks" ,
 		canonicalUrl: 'http://jorgevalle.com' + req.url,
 		activeUrl: req.url
 	});

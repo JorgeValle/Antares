@@ -8,6 +8,9 @@ var ctrlQueries = require('../controllers/queries');
 /* GET theme home page */
 router.get('/', ctrlMain.homepage);
 
+/* GET theme home page */
+router.get('/timeline', ctrlMain.timeline);
+
 /* GET page by url */
 router.get('/blog/:pageUrl', ctrlPages.pageByUrl);
 

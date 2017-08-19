@@ -1,294 +1,59 @@
-body {
-	font-family: 'Domine', serif;
-	border-top: 5px solid #292b2c;
-}
-a:hover,
-a:focus {
-	text-decoration: none;
-}
-button {
-	color: #fff;
-    background-color: #D28A7E;
-    border-color: #D28A7E;
-}
-button:hover {
-	background-color: #114753;
-	cursor: pointer;
-}
-nav a {
-	color: #114753;
-	text-decoration: underline;
-	font-size: 1.1em;
-	text-decoration: none;
-}
-nav.main-menu {
-	text-transform: uppercase;
-	font-family: 'Roboto', serif;
-}
-nav div.col-lg-6 {
-	border-top: 1px solid #e0e0e0;
-	border-bottom: 1px solid #e0e0e0;
-}
-nav ul {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	list-style: none;
-	padding-left: 0;
-}
-nav.main-menu a.selected {
-	border-bottom: 3px solid #956362;
-	padding-bottom: 11px;
-}
-.newsletter-signup {
-	font-family: 'Roboto', serif;
-	color: #292b2c;
-	border-top: 3px solid #114753;
-	margin-top: 30px;
-}
-main a {
-	color: #956362;
-	border-bottom: 1px dotted #594a42;
-}
-main nav a {
-	border-bottom: none;
-}
-header h1,
-header h2 {
-	font-family: 'Domine', serif;
-}
-h1, h2, h3, h4, i.date {
-	font-family: 'Roboto', serif;
-}
-header h1 {
-	font-size: 1.8em;
-}
-header h2 {
-	font-size: 1.3em;
-	color: #757575;
-}
-article h2,
-article h3 {
-	font-size: 1.3rem;
-	border-bottom: 1px solid #e0e0e0;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-article h2 + p,
-article h3 + p,
-article h2 + ul,
-article h3 + ul { 
-	padding-top: 10px;
-}
+/*
+Error: $color: 'theme-color("primary")' is not a color for `darken'
+        on line 167 of scss/_variables.scss
+        from line 1 of main.scss
 
-article div {
-	margin-top: 20px;
-}
-
-i.date,
-footer small {
-	font-family: 'Roboto', serif;
-	color: #757575;
-}
-span.email {
-	unicode-bidi: bidi-override;
-	direction: rtl;
-}
-hr {
-	border-top: 1px solid #e0e0e0;
-}
-hr.fancy {
-	border-top: 1px solid #e0e0e0;
-	text-align: center;
-}
-hr.fancy:after {
-	content: 'Θ';
-	display: inline-block;
-	position: relative;
-	top: -14px;
-	padding: 0 10px;
-	background: #fff;
-	color: #bdbdbd;
-	font-size: 18px;
-}
-
-/* http://prismjs.com/download.html?themes=prism&languages=markup+clike+javascript+csharp&plugins=line-numbers */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: black;
-	background: none;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-	display: inline-block;
-	max-width: 100%;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: white;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: slategray;
-}
-
-.token.punctuation {
-	color: #999;
-}
-
-.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #956362;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #6D7D7C;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	color: #292b2c;
-}
-
-.token.function {
-	color: #DD4A68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-	color: #e90;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-
-pre.line-numbers {
-	position: relative;
-	padding-left: 3.8em;
-	counter-reset: linenumber;
-}
-
-pre.line-numbers > code {
-	position: relative;
-}
-
-.line-numbers .line-numbers-rows {
-	position: absolute;
-	pointer-events: none;
-	top: 0;
-	font-size: 100%;
-	left: -3.8em;
-	width: 3em; /* works for line-numbers below 1000 lines */
-	letter-spacing: -1px;
-	border-right: 1px solid #999;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-}
-
-.line-numbers-rows > span {
-	pointer-events: none;
-	display: block;
-	counter-increment: linenumber;
-}
-
-.line-numbers-rows > span:before {
-	content: counter(linenumber);
-	color: #999;
-	display: block;
-	padding-right: 0.8em;
-	text-align: right;
-}
+Backtrace:
+scss/_variables.scss:167
+main.scss:1
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/script/tree/funcall.rb:315:in `reformat_argument_error'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/script/tree/funcall.rb:162:in `rescue in _perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/script/tree/funcall.rb:132:in `_perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/script/tree/node.rb:50:in `perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:482:in `visit_variable'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:329:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `block in with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `with_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:391:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: $color: 'theme-color(\"primary\")' is not a color for `darken'\A         on line 167 of scss/_variables.scss\A         from line 1 of main.scss"; }

@@ -2,48 +2,49 @@ doctype html
 html(lang='en')
 	head
 		meta(charset='utf-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		title= documentTitle
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		title= documentTitle + ' | Jorge Valle - Javascript and Web Development'
 		link(rel='canonical', href= canonicalUrl )
 		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Domine|Roboto')
-		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
-		link(rel='stylesheet', href='/stylesheets/main.css')
+		link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/main-second-backup.css')
+		script(src='//code.jquery.com/jquery-3.2.1.slim.min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')
+		script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')
+		script(src='//use.fontawesome.com/c5381503c3.js')
+		script(src='/scripts/main.js', async)
 		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-65509004-1', 'auto'); ga('send', 'pageview');
 
 	-// we grab the first five characters of the url value
 	-var activeUrlSubstring = activeUrl.substring(0,5)
 
+	// the nav stays consistent throughout
 	body
-		div.container-fluid
-			header.row
-				div.col-sm-1.col-md-1.col-lg-3
-				div.col-sm-10.col-md-10.col-lg-6
-					a(href='/')
-						img.rounded-circle.mx-auto.d-block.p-3(src='/images/jorge.jpg', alt='Jorge Valle Photo')
-					h1.text-center Jorge Valle
-					h2.text-center.pb-2 Man. Web developer. Ouroboric.
-				div.col-sm-1.col-md-1.col-lg-3
+		nav.navbar.navbar-expand-lg.sticky-top.navbar-light.bg-light.yellow
+			a.navbar-brand(href='/')
+				img.rounded-circle.img-thumbnail.d-inline-block.align-top(src='/images/jorge-bw-700.jpg', alt='Jorge Valle Photo', title='Jorge Valle', style='width: 75px;')
+			button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar', aria-controls='navbar', aria-expanded='false', aria-label='Toggle navigation')
+				span.navbar-toggler-icon
+			div.collapse.navbar-collapse#navbar
+				ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+					li.nav-item
+						if activeUrl == '/'
+							a.nav-link(href='/', class='active') Home
+						else
+							a.nav-link(href='/') Home
+					li.nav-item
+						if activeUrlSubstring == '/time'
+							a.nav-link(href='/timeline', class='active') Timeline
+						else
+							a.nav-link(href='/timeline') Timeline
+					li.nav-item
+						if activeUrlSubstring == '/blog'
+							a.nav-link(href='/blog', class='active') Blog
+						else
+							a.nav-link(href='/blog') Blog
+				i.navbar-text Jorge Valle, Front End & Web Applications Developer
 
-			nav.row.main-menu
-				div.col-sm-1.col-md-1.col-lg-3
-				div.col-sm-10.col-md-10.col-lg-6
-					ul.row
-						li.col-6.text-center 
-							a(href='/', class= activeUrl === '/' ? 'selected': '') Home
-						li.col-6.text-center 
-							if activeUrlSubstring == '/blog'
-								a(href='/blog', class='selected') Blog
-							else
-								a(href='/blog') Blog
-				div.col-sm-1.col-md-1.col-lg-3
+		block content
 
-		//- main content
-		div.container-fluid
-			main.row.mt-5
-				div.col-sm-1.col-md-1.col-lg-3
-				div.col-sm-10.col-md-10.col-lg-6
-					block content
-				div.col-sm-1.col-md-1.col-lg-3
-
-			include footer
+		include footer

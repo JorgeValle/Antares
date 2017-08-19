@@ -2,8 +2,26 @@ extends layout
 
 block content
 
-	article.mt-2.mb-3
-		p I'm currently living in Vermont, working as a front-end developer at the #[a(href='https://www.veic.org/') Vermont Energy Investment Corporation].
-		p I have worked on #[a(href="https://www.efficiencyvermont.com/find-contractor-retailer") AngularJS applications] used by thousands of people a month, #[a(href="http://www.efficiencysmart.org") Orchard CMS websites] that help people save money and energy, and #[a(href="https://rebates.efficiencyvermont.com") eCommerce platforms] as well.
-		p In my spare time, I enjoy working on different side projects, like this #[a(href="http://www.thisisyourcareerpath.com/") MEAN stack application] developed in 24 hours for a hackathon. I'm also actively developing #[a(href="https://github.com/JorgeValle/Antares") a simple Node and Express CMS], which this site is running on.
-		p I read, think and feel. I also work out and practice Brazilian Jiu Jitsu when time allows. Plus, I fucking love music.
+	main.container-fluid.mt-4
+		div.row
+			div.col
+				h1 Jorge Valle
+
+		div.row.mt-3
+			div.col-xs-12.col-sm-12.col-md-6
+
+				p.lead I'm a front end & web applications developer, currently focusing on using Angular, Node.js and the .NET framework.
+				p I live in Vermont, and work as a front end developer at the #[a(href='https://www.veic.org/') Vermont Energy Investment Corporation].
+				p I have worked on #[a(href="https://www.efficiencyvermont.com/find-contractor-retailer") AngularJS applications] used by thousands of people a month, #[a(href="http://www.efficiencysmart.org") Orchard CMS websites] that help people save money and energy, and #[a(href="https://rebates.efficiencyvermont.com") eCommerce platforms] as well.
+				p In my spare time, I enjoy working on different side projects, like this #[a(href="http://www.thisisyourcareerpath.com/") MEAN stack application] developed in 24 hours for a hackathon. I'm also actively developing #[a(href="https://github.com/JorgeValle/Antares") a simple Node and Express CMS], which this site is running on.
+				p I also work out and practice Brazilian Jiu Jitsu when time allows.
+
+			div.col-xs-12.col-sm-12.col-md-6
+				div.row
+					div.col-6
+						img.img-thumbnail(src='/images/portfolio/efficiency-vermont.png')
+					div.col-6
+						img.img-thumbnail(src='/images/portfolio/dcseu.png')
+					div.col-6
+					div.col-6
+						img.img-thumbnail(src='/images/portfolio/efficiency-smart.png')
