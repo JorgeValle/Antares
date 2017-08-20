@@ -2,25 +2,41 @@ extends layout
 
 block content
 	h1 Update page
-
 	//- this gets converted to a put by method-override package
 	form(action='/api/pages/update?_method=put', method='post')
 		div.form-group
 			label(for='pageTitle') Page Title
-			input#pageTitle.form-control(type='text', aria-describedby='pageTitleHelp', name='title')
+			input#pageTitle.form-control(type='text', aria-describedby='pageTitleHelp', name='title', value='#{apiResponse.title}')
 			small#pageTitleHelp.form-text.text-muted The title of your page.
 		div.form-group
 			label(for='alternativeTitle') Alternative Title
-			input#alternativeTitle.form-control(type='text', aria-describedby='alternativeTitleHelp', name='alternativeTitle')
+			input#alternativeTitle.form-control(type='text', aria-describedby='alternativeTitleHelp', name='alternativeTitle', value='#{apiResponse.alternativeTitle}')
 			small#alternativeTitleHelp.form-text.text-muted The alternative title of your page.
 		div.form-group
 			label(for='pageSlug') Page Slug
-			input#pageSlug.form-control(type='text', aria-describedby='pageSlugHelp', name='url')
+			input#pageSlug.form-control(type='text', aria-describedby='pageSlugHelp', name='url', value='#{apiResponse.url}')
 			small#pageSlugHelp.form-text.text-muted The URL slug for your page. If left blank, we'll generate an automatic one.
 		div.form-group
-			label(for='pageContent') Page Content
-			textarea#pageContent.form-control(rows='8', aria-describedby='pageContentHelp', name='body')
-			small#pageContentHelp.form-text.text-muted The content of your page. HTML markup only.
+			label(for='pageContentOne') Page Content One
+			textarea#pageContentOne.form-control(rows='8', aria-describedby='pageContentOneHelp', name='bodyOne')=apiResponse.bodyOne
+			small#pageContentOneHelp.form-text.text-muted The first content of your page. HTML markup only.
+		div.form-group
+			label(for='pageContentTwo') Page Content Two
+			textarea#pageContentTwo.form-control(rows='8', aria-describedby='pageContentTwoHelp', name='bodyTwo')=apiResponse.bodyTwo
+			small#pageContentTwoHelp.form-text.text-muted The second content of your page. HTML markup only.
+		div.form-group
+			label(for='pageContentThree') Page Content Three
+			textarea#pageContentThree.form-control(rows='8', aria-describedby='pageContentThreeHelp', name='bodyThree')=apiResponse.bodyThree
+			small#pageContentThreeHelp.form-text.text-muted The third content of your page. HTML markup only.
+		div.form-group
+			label(for='pageContentFour') Page Content Four
+			textarea#pageContentFour.form-control(rows='8', aria-describedby='pageContentFourHelp', name='bodyFour')=apiResponse.bodyFour
+			small#pageContentFourHelp.form-text.text-muted The fourth content of your page. HTML markup only.
+		div.form-group
+			label(for='pageContentFive') Page Content Five
+			textarea#pageContentFive.form-control(rows='8', aria-describedby='pageContentFiveHelp', name='bodyFive')=apiResponse.bodyFive
+			small#pageContentFiveHelp.form-text.text-muted The fifth content of your page. HTML markup only.
+		div.form-group
 		div.form-group
 			label(for='password') Password
 			input#password.form-control(type='text', aria-describedby='passwordHelp', name='password')

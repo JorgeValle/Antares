@@ -11,8 +11,8 @@ block content
 					div.card
 						div.card-block
 							h4
-								a(href='#')= page.title
-							p.card-text !{page.body.substr(0, 100) + '...'}
+								a(href='/admin/update?page=#{page.url}')= page.title
+							p.card-text !{page.bodyOne.substr(0, 100) + '...'}
 							em &nbsp;last modified on March 4th, 2017
-							a.btn.btn-primary(href='/someapicall/' + page.url) Edit
-							a.btn.btn-danger(href='/someapicall/' + page.url) Delete
+							a.btn.btn-primary(href='/admin/update?page=#{page.url}') Edit
+							a.btn.btn-danger(href='#' + page.url) Delete

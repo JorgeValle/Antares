@@ -49,6 +49,14 @@ var renderQueryContent = function(req, res, responseBody) {
 	});
 };
 
+var renderUpdateContent = function(req, res, responseBody) {
+	res.render('update', {
+		documentTitle: 'Update Content | Antares CMS' ,
+		// we parse JSON response to get properties ready for consumption in pug templates
+		apiResponse: JSON.parse(responseBody)
+	});
+};
+
 /* GET welcome page */
 module.exports.index = function(req, res) {
 	res.render('index', { 
@@ -62,8 +70,33 @@ module.exports.create = function(req, res) {
 	});
 };
 
+module.exports.createType = function(req, res) {
+	res.render('create-type', { 
+		documentTitle: 'Create Type | Antares CMS'
+	});
+};
+
 module.exports.update = function(req, res) {
-	res.render('update', { 
-		documentTitle: 'Update Page | Antares CMS'
+
+	const wantedSlug = req.query.page;
+
+	var requestOptions, path;
+	path = '/api/pages/' + wantedSlug;
+
+	var fullUrl = apiOptions.server + path;
+
+	requestOptions = {
+		url: fullUrl,
+		method: 'GET'
+	};
+
+	request(requestOptions, function(err, response, body) {
+
+		if (err) {
+			console.log("Request error" + err);
+		} else {
+			renderUpdateContent(req, res, body);
+		}
+
 	});
 };
