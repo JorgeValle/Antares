@@ -29,7 +29,7 @@ var renderPageByTitle = function(req, res, responseBody) {
 
 		// we parse JSON response to get properties ready for consumption in pug templates
 		documentTitle: JSON.parse(responseBody).title + " | JorgeValle.com" ,
-		canonicalUrl: 'http://jorgevalle.com' + req.url,
+		canonicalUrl: 'https://jorgevalle.com' + req.url,
 		activeUrl: req.url,
 		title: JSON.parse(responseBody).title,
 		alternativeTitle: JSON.parse(responseBody).alternativeTitle,
@@ -63,7 +63,7 @@ module.exports.pageByUrl = function(req, res) {
 			} else if ( response.statusCode == '404' ) {
 				res.status(404).render('404', { 
 						documentTitle: "Not Found" ,
-						canonicalUrl: 'http://jorgevalle.com' + req.url,
+						canonicalUrl: 'https://jorgevalle.com' + req.url,
 						activeUrl: req.url
 					});
 			} else {
@@ -81,7 +81,7 @@ module.exports.thanks = function(req, res) {
 
 		// we parse JSON response to get properties ready for consumption in pug templates
 		documentTitle: "Thanks" ,
-		canonicalUrl: 'http://jorgevalle.com' + req.url,
+		canonicalUrl: 'https://jorgevalle.com' + req.url,
 		activeUrl: req.url
 	});
 };

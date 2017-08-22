@@ -2,7 +2,7 @@
 module.exports.homepage = function(req, res) {
 	res.render('homepage', { 
 		documentTitle: 'Home',
-		canonicalUrl: 'http://jorgevalle.com' + req.url,
+		canonicalUrl: 'https://jorgevalle.com' + req.url,
 		activeUrl: req.url
 	});
 };
@@ -11,7 +11,7 @@ module.exports.homepage = function(req, res) {
 module.exports.timeline = function(req, res) {
 	res.render('timeline', { 
 		documentTitle: 'Timeline',
-		canonicalUrl: 'http://jorgevalle.com' + req.url,
+		canonicalUrl: 'https://jorgevalle.com' + req.url,
 		activeUrl: req.url
 	});
 };
