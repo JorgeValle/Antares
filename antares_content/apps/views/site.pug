@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	h1 Global variables
+
+	p Do you need some values to be visible across all contexts and templates? Then set them here.
+
+	//- this gets converted to a put by method-override package
+	form(action='/api/settings', method='post')
+		div.form-group
+			label(for='site-title') Site Title
+			input#site-title.form-control(type='text', aria-describedby='site-title-help', name='siteTitle')
+			small#site-title-help.form-text.text-muted The title of your site.
+		div.form-group
+			label(for='username') Email
+			input#email.form-control(type='text', aria-describedby='email-help', name='email')
+			small#email-help.form-text.text-muted The admin email. This also functions as your username.
+		div.form-group
+			label(for='password') Password, twice
+			input#password.form-control(type='password', aria-describedby='password-help', name='password')
+			input#password2.form-control(type='password', aria-describedby='password-help', name='password2')
+			small#password-help.form-text.text-muted Make it strong.
+		div
+			button.btn.btn-primary(type='submit') Install

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1 Create type
+
+	form(action='/api/pages/create', method='post')
+		div.form-group
+			label(for='pageTitle') Content type name
+			input#pageTitle.form-control(type='text', aria-describedby='pageTitleHelp', name='title')
+			small#pageTitleHelp.form-text.text-muted The name of your content type. Is it a review? A page? A videogame? A user?
