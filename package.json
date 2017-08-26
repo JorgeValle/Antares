@@ -1,9 +1,11 @@
 {
-  "name": "Antares",
-  "version": "0.0.0",
+  "name": "antares",
+  "version": "0.0.1",
+  "description": "An HTTP endpoint framework, built on Node.js and Mongoose",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JorgeValle/Antares"
   },
   "engines": {
     "node": "~4.2.1",
@@ -12,14 +14,26 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "~1.4.3",
+    "crypto": "^1.0.1",
     "debug": "~2.2.0",
+    "esdoc": "^1.0.1",
+    "esdoc-standard-plugin": "^1.0.0",
     "express": "~4.13.4",
+    "express-jwt": "^5.3.0",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^7.4.3",
     "method-override": "^2.3.7",
     "mongoose": "^4.8.5",
     "morgan": "~1.7.0",
-    "request": "^2.80.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.3",
+    "request": "2.81.0",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.7.0",
     "gulp-concat": "^2.6.1",
@@ -27,5 +41,14 @@
     "gulp-minify": "^1.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
+    "jasmine": "^2.7.0",
+    "jasmine-node": "^1.14.5",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "author": "Jorge Valle",
+  "license": "MIT",
+  "scripts": {
+    "test": "jasmine"
   }
 }
