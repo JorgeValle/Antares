@@ -74,4 +74,5 @@ module.exports.signup = function(req, res) {
 			utilities.sendJsonResponse(res, 201, {'token': token});
 		}
 	});
+    user.roles[0] = 'regular';
 }

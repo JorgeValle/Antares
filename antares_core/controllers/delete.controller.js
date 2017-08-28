@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
  *
  *
  */
-module.exports.deleteOnePage = function(req, res) {
+module.exports.deleteOneById = function(req, res) {
 
 	// get the url from the router
 	var wantedUrl = req.body.url;
