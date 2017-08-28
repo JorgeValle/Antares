@@ -1,0 +1,7 @@
+{
+	"source": "./antares_core/services",
+	"destination": "./docs",
+	"plugins": [
+		{"name": "esdoc-standard-plugin"}
+	]
+}
