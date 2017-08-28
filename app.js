@@ -1,42 +1,50 @@
-let express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const passport = require('passport');
 
 // the entry point for the database connection
-require('./antares_core/models/entry-point.model');
-
-
+require('./antares_core/models/entry-point');
 
 // setting up the routes for the core admin section, core api, and user themes
-const routesAntares = require('./antares_content/apps/routes/index');
 const routesAPI = require('./antares_core/routes/retrieve.routes');
-const routesTheme = require('./antares_content/themes/jorgevalle/routes/index');
+const routesAntares = require('./antares_content/apps/antares_admin/routes/index');
+const routesTheme = require('./antares_content/apps/jorge_valle/routes/index');
 
+/**
+ * declare the express app
+ *
+ *
+ */
 var app = express();
 
-// view directory setup, both for admin section and themes folder
-app.set('views', [__dirname + '/antares_content/apps/views', __dirname + '/antares_content/themes/jorgevalle/views']);
+app.listen(3000, function () {
+  console.log("Express has started on port 3000");
+});
+
+// view directory setup, both for antares admin app, and other user apps
+app.set('views', [__dirname + '/antares_content/apps/antares_admin/views', __dirname + '/antares_content/apps/jorge_valle/views']);
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// logging middleware
 app.use(logger('dev'));
+
+// parsing middleware for json and cookies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'assets')));
+
 // use method override for allowing put and delete requests on forms
 app.use(methodOverride('_method'));
 
 //passport initialize
 app.use(passport.initialize());
 
-
+// setting up the routes for Antares, the Antares admin app, and the optional user app
 app.use('/api', routesAPI);
 app.use('/', routesTheme);
 app.use('/admin', routesAntares);
@@ -48,12 +56,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.listen(3000, function () {
-  console.log("Express has started on port 3000");
-});
-
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -76,5 +79,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+// finall we export the app module
 module.exports = app;

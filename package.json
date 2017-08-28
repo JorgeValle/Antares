@@ -23,6 +23,7 @@
     "jade": "~1.11.0",
     "jsonwebtoken": "^7.4.3",
     "method-override": "^2.3.7",
+    "mocha": "^3.5.0",
     "mongoose": "^4.8.5",
     "morgan": "~1.7.0",
     "passport": "^0.4.0",
@@ -49,6 +50,9 @@
   "author": "Jorge Valle",
   "license": "MIT",
   "scripts": {
-    "test": "jasmine"
+    "test-antares-controllers": "mocha antares_core/controllers/tests/*.js",
+    "test-antares-models": "mocha antares_core/models/tests/*.js",
+    "test-antares-routes": "mocha antares_core/routes/tests/*.js",
+    "test-antares-services": "mocha antares_core/services/tests/*.js"
   }
 }
